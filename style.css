@@ -1,4 +1,5 @@
 body {
+    font-family: 'Lobster', cursive;
     margin: 0px;
     height: 100vh;
     display: flex;
@@ -76,4 +77,28 @@ table tr td:last-child {
 
 .d-none {
     display: none;
+}
+
+.horizontal-line { /*lines are defined by an inline style*/
+    width: 400px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transform: scaleX(0.0);
+    transition: transform 225ms ease-in-out;
+}
+
+.make-vertical {
+    transform: rotate(90deg) scaleX(0.0);
+    transition: transform 225ms ease-in-out;
+}
+
+.make-diagonal {
+    transform: rotate(45deg) scaleX(0.0);
+    transition: transform 225ms ease-in-out;
+}
+
+.make-diagonal-two {
+    transform: rotate(-45deg) scaleX(0.0);
+    transition: transform 225ms ease-in-out;
 }
