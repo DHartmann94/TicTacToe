@@ -1,17 +1,24 @@
 body {
-    font-family: 'Lobster', cursive;
     margin: 0px;
     height: 100vh;
+    font-family: 'Lobster', cursive;
+    color: white;
+    background-image: url(img/bg-image.jpg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.d-none {
+    display: none;
+}
+
+/* player panel */
 .player-panel {
     margin-bottom: 32px;
-    display: flex;
     font-size: 32px;
+    display: flex;
 }
 
 .player-panel div {
@@ -30,6 +37,7 @@ body {
     opacity: 0.3;
 }
 
+/* matchfield */
 table {
     border-collapse: collapse;
 }
@@ -41,13 +49,13 @@ tr {
 td {
     width: 133px;
     height: 133px;
-    border: 5px solid black; 
+    border: 5px solid rgba(255, 255, 255, 0.8); 
     position: relative;
     cursor: pointer;
 }
 
 td:hover {
-    background-color: rgba(255, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 table tr:first-child td {
@@ -75,14 +83,11 @@ table tr td:last-child {
     left: 26px;
 }
 
-.d-none {
-    display: none;
-}
-
+/* animation win lines */
 .horizontal-line { /*lines are defined by an inline style*/
     width: 400px;
     height: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     position: absolute;
     transform: scaleX(0.0);
     transition: transform 225ms ease-in-out;

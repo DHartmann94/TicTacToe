@@ -14,7 +14,7 @@ function fillShape(id) {
             document.getElementById('player-2').classList.add('player-inactiv');
         }
     
-        fields[id] = currentShape;
+        fields[id] = currentShape; // cross or circle "pushed" in array
         console.log(fields);
         draw();
         checkForWin();
@@ -80,37 +80,35 @@ function draw() {
 }*/
 
 function checkForWin() {
-    let winningConditions = [
+    const winningConditions = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontal lines
         [0, 3, 6], [1, 4, 7], [2, 5, 8], // Vertical lines
         [0, 4, 8], [2, 4, 6] // Diagonal lines
     ];
   
-    for (let [a, b, c] of winningConditions) { // a b und c repräsentieren die 3 Zahlen im array winningConditions
-      if (fields[a] === fields[b] && fields[b] === fields[c] && fields[a]) { // die belegten Felder werden überprüft
-        console.log('GEWONNEN:', fields[a]); // wenn fields[a] kreuz oder kreis ist, wird dieser ausgegeben
+    for (let [a, b, c] of winningConditions) { // a b and c represent the 3 numbers in the array: winningConditions
+      if (fields[a] === fields[b] && fields[b] === fields[c] && fields[a]) { // the occupied fields are checked
+        console.log('GEWONNEN:', fields[a]); // if fields[a] is a cross or a circle, this will be returned
 
-        animationWinningLines(a,b,c); // Animation hinzufügen
-        //return fields[a];
+        animationWinLines(a,b,c);
       }
     }
-    //return null;
 }
 
-function animationWinningLines(a,b,c) { // a b und c repräsentieren die 3 Zahlen im array winningConditions
-    if (a == 0 && b == 1 && c == 2) {
+function animationWinLines(a,b,c) { // a b and c represent the 3 numbers in the array: winningConditions
+    if (a == 0 && b == 1 && c == 2) { // Horizontal lines
         document.getElementById('line-0').style.transform = 'scaleX(1.0)';
     } else if (a == 3 && b == 4 && c == 5) {
         document.getElementById('line-1').style.transform = 'scaleX(1.0)';
     } else if (a == 6 && b == 7 && c == 8) {
         document.getElementById('line-2').style.transform = 'scaleX(1.0)';
-    } else if (a == 0 && b == 3 && c == 6) {
+    } else if (a == 0 && b == 3 && c == 6) { // Vertical lines
         document.getElementById('line-3').style.transform = 'rotate(90deg) scaleX(1.0)';
     } else if (a == 1 && b == 4 && c == 7) {
         document.getElementById('line-4').style.transform = 'rotate(90deg) scaleX(1.0)';
     } else if (a == 2 && b == 5 && c == 8) {
         document.getElementById('line-5').style.transform = 'rotate(90deg) scaleX(1.0)';
-    } else if (a == 0 && b == 4 && c == 8) {
+    } else if (a == 0 && b == 4 && c == 8) { // Diagonal lines
         document.getElementById('line-6').style.transform = 'rotate(45deg) scaleX(1.1)';
     } else if (a == 2 && b == 4 && c == 6) {
         document.getElementById('line-7').style.transform = 'rotate(-45deg) scaleX(1.1)';
