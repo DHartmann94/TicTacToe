@@ -17,7 +17,6 @@ function fillShape(id) {
         }
     
         fields[id] = currentShape; // cross or circle "pushed" in array
-        console.log(fields);
         draw();
         checkForWin();
         checkForUndecided();

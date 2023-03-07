@@ -30,8 +30,8 @@ body {
 }
 
 .restart-btn {
-    width: 300px;
     margin-bottom: 16px;
+    width: 300px;
     border: 1px solid rgba(255, 255, 255, 0.8); 
     border-radius: 15px;
     background-color: rgb(27,26,127);
