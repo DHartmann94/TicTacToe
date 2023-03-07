@@ -25,10 +25,10 @@ function fillShape(id) {
 function draw() { // set circle or cross
     for(let i=0; i < fields.length; i++) {
         if(fields[i] == 'circle') {
-            document.getElementById('circle-' + i).classList.remove('d-none');
+            document.getElementById(`circle-${i}`).classList.remove('d-none');
         } 
         if(fields[i] == 'cross') {
-            document.getElementById('cross-' + i).classList.remove('d-none');
+            document.getElementById(`cross-${i}`).classList.remove('d-none');
         } 
     }
 }
@@ -122,4 +122,18 @@ function setGameOver() {
     setTimeout(function(){
         document.getElementById('game-over').classList.remove('d-none');
     }, 2000);
+}
+
+function restart() {
+    gameOver = false;
+    fields = []; // reset array fields
+    document.getElementById('game-over').classList.add('d-none');
+
+    for(let i=0; i <= 7; i++) {
+        document.getElementById(`line-${i}`).classList.add('d-none');
+    }
+    for(let i=0; i < fields.length; i++) {
+        document.getElementById(`circle-${i}`).classList.add('d-none');
+        document.getElementById(`cross-${i}`).classList.add('d-none');
+    }
 }
