@@ -1,9 +1,10 @@
 let fields = [];
 
+let gameOver = false;
 let currentShape = 'cross';
 
 function fillShape(id) {
-    if(!fields[id]) { // check: field occupied
+    if(!fields[id] && !gameOver) { // check: field occupied and gameOver
         if(currentShape == 'cross') {
             currentShape = 'circle';
             document.getElementById('player-2').classList.remove('player-inactiv');
@@ -21,7 +22,7 @@ function fillShape(id) {
     }
 }
 
-function draw() {
+function draw() { // set circle or cross
     for(let i=0; i < fields.length; i++) {
         if(fields[i] == 'circle') {
             document.getElementById('circle-' + i).classList.remove('d-none');
@@ -91,6 +92,7 @@ function checkForWin() {
         console.log('GEWONNEN:', fields[a]); // if fields[a] is a cross or a circle, this will be returned
 
         animationWinLines(a,b,c);
+        setGameOver();     
       }
     }
 }
@@ -113,4 +115,11 @@ function animationWinLines(a,b,c) { // a b and c represent the 3 numbers in the 
     } else if (a == 2 && b == 4 && c == 6) {
         document.getElementById('line-7').style.transform = 'rotate(-45deg) scaleX(1.1)';
     }
+}
+
+function setGameOver() {
+    gameOver = true;
+    setTimeout(function(){
+        document.getElementById('game-over').classList.remove('d-none');
+    }, 2000);
 }
