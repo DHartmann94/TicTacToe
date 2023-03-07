@@ -126,17 +126,14 @@ table tr td:last-child {
 
 .make-vertical {
     transform: rotate(90deg) scaleX(0.0);
-    transition: transform 225ms ease-in-out;
 }
 
 .make-diagonal {
     transform: rotate(45deg) scaleX(0.0);
-    transition: transform 225ms ease-in-out;
 }
 
 .make-diagonal-two {
     transform: rotate(-45deg) scaleX(0.0);
-    transition: transform 225ms ease-in-out;
 }
 
 .line-zero {

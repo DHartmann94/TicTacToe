@@ -1,5 +1,6 @@
 let fields = [];
 
+let attempt = 0;
 let gameOver = false;
 let currentShape = 'cross';
 
@@ -19,6 +20,7 @@ function fillShape(id) {
         console.log(fields);
         draw();
         checkForWin();
+        checkForUndecided();
     }
 }
 
@@ -67,6 +69,15 @@ function animationWinLines(a,b,c) { // a b and c represent the 3 numbers in the 
         document.getElementById('line-6').style.transform = 'rotate(45deg) scaleX(1.1)';
     } else if (a == 2 && b == 4 && c == 6) {
         document.getElementById('line-7').style.transform = 'rotate(-45deg) scaleX(1.1)';
+    }
+}
+
+function checkForUndecided() {
+    attempt++;
+
+    // check if all squares are occupied but no player has won
+    if (attempt === 9 && !checkForWin()) {
+        setGameOver();
     }
 }
 
