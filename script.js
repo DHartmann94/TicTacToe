@@ -97,6 +97,7 @@ function restart() {
         document.getElementById(`cross-${i}`).classList.add('d-none');
     }
 
+    attempt = 0; // reset attempt
     fields = []; // reset array fields
     resetAnimationWinLines();
 }
