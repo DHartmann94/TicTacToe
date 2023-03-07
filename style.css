@@ -31,6 +31,7 @@ body {
 
 .restart-btn {
     width: 300px;
+    margin-bottom: 16px;
     border: 1px solid rgba(255, 255, 255, 0.8); 
     border-radius: 15px;
     background-color: rgb(27,26,127);
@@ -114,7 +115,7 @@ table tr td:last-child {
 }
 
 /* animation win lines */
-.horizontal-line { /*lines are defined by an inline style*/
+.horizontal-line { 
     width: 400px;
     height: 10px;
     background-color: rgba(255, 255, 255, 0.7);
@@ -136,4 +137,118 @@ table tr td:last-child {
 .make-diagonal-two {
     transform: rotate(-45deg) scaleX(0.0);
     transition: transform 225ms ease-in-out;
+}
+
+.line-zero {
+    top: 60px;
+}
+
+.line-one {
+    top: 200px;
+}
+
+.line-two {
+    top: 340px;
+}
+
+.line-three {
+    top: 200px; 
+    right: 150px;
+}
+
+.line-four {
+    top: 200px; 
+    right: 10px;
+}
+
+.line-five {
+    top: 200px; 
+    left: 145px;
+}
+
+.line-six {
+    top: 195px;
+}
+
+.line-seven {
+    top: 205px;
+}
+
+@media (max-width: 775px) {
+    .game-over {
+        width: 325px;
+    }
+
+    .restart-btn {
+        width: 100px;
+        font-size: 25px;
+    }
+
+    /* player panel */
+    .player-panel {
+        font-size: 25px;
+    }
+
+    .player-panel img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* matchfield */
+    tr {
+        width: 266px;
+    }
+    
+    td {
+        width: 88px;
+        height: 88px;
+    }
+
+    .shape-img {
+        width: 53px;
+        height: 53px;
+        top: 17px;
+        left: 17px;
+    }
+
+    /* animation win lines */
+    .horizontal-line {
+        width: 266px;
+        height: 6px;
+    }
+
+    .line-zero {
+        top: 40px;
+    }
+
+    .line-one {
+        top: 134px;
+    }
+
+    .line-two {
+        top: 229px;
+    }
+
+    .line-three {
+        top: 134px; 
+        right: 103px;
+    }
+
+    .line-four {
+        top: 134px; 
+        right: 8px;
+    }
+
+    .line-five {
+        top: 134px; 
+        left: 100px;
+    }
+
+    .line-six {
+        top: 130px;
+    }
+
+    .line-seven {
+        top: 139px;
+    }
 }
